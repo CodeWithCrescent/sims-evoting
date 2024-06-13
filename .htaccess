@@ -1,0 +1,14 @@
+
+# HTID:23377286: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:23377286:
+
+# Redirect non-existent URLs to 404.php
+ErrorDocument 404 /err/404.php
+
+# Make sure requests for actual files and directories are not rewritten
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirect all other requests to the 404.php
+RewriteRule ^.*$ /err/404.php [L]
